@@ -14,13 +14,14 @@
                     {{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'Email'}}) }}
                     <p>Please enter your password.</p>
                     {{ form_widget(registrationForm.plainPassword, { 'attr': {'placeholder': 'Password'}}) }}
-                    {{ form_end(registrationForm)}}
                     <div class="button-group">
                         <button class="btn btn-lg btn-primary" type="submit">
                             Register
                         </button>
                         <a href="{{ "/" }}" class="btn btn-lg btn-secondary">Go Back</a>
                     </div>
+
+                    {{ form_end(registrationForm)}}
                 </div>
             </div>
         </div>
