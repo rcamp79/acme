@@ -22,7 +22,7 @@
                {% for card in data %}
                <tr>
                    <td>{{ card.user }}</td>
-                   <td>{{ card.orderdate|date('d-m-Y')}}</td>
+                   <td>{{ card.orderdate|date('m-d-Y')}}</td>
                    <td>{{ card.manufacturer }}</td>
                    <td>{{ card.player }}</td>
                    <td>{{ card.value }}</td>
