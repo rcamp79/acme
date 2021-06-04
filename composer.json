@@ -21,8 +21,10 @@
         "symfony/proxy-manager-bridge": "5.3.*",
         "symfony/runtime": "5.3.*",
         "symfony/security-bundle": "5.3.*",
+        "symfony/stopwatch": "^5.3",
         "symfony/twig-bundle": "^5.3",
         "symfony/validator": "5.3.*",
+        "symfony/web-profiler-bundle": "^5.3",
         "symfony/webpack-encore-bundle": "^1.11",
         "symfony/yaml": "5.3.*",
         "twig/extra-bundle": "^2.12|^3.0",
@@ -70,9 +72,5 @@
             "allow-contrib": false,
             "require": "5.3.*"
         }
-    },
-    "require-dev": {
-        "symfony/stopwatch": "^5.3",
-        "symfony/web-profiler-bundle": "^5.3"
     }
 }
