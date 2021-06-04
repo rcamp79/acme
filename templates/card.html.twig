@@ -6,12 +6,13 @@
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">{{ message }}</div>
     {% endfor %}
-    <div class="container-fluid main">
+    <div class="container-fluid card-container">
+        <h1>Card Order</h1>
         <div class="container card-content-container">
-            <h1>Card Order</h1>
+
             <div class="row">
                 <div class="col-md-4 box sidebar">
-                    <a href="/" class="btn btn-lg btn-primary">View Orders</a>
+                    <a href="{{ "order" }}" class="btn btn-lg btn-primary">View Orders</a>
                     <a href="/" class="btn btn-lg btn-primary">Log Out</a>
                 </div>
                 <div class="col-md-8 box form-container">

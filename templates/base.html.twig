@@ -7,7 +7,7 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-            <link rel="stylesheet" href="{{ asset('styles/bootstrap.min.css') }}">
+{#            <link rel="stylesheet" href="{{ asset('styles/bootstrap2.min.css') }}">#}
         {% endblock %}
 
         {% block javascripts %}
@@ -19,10 +19,12 @@
     <body>
        <nav class="navbar navbar-light bg-light">
            <div class="container-fluid nav-item">
-               <a class="navbar-brand" href="{{ '/' }}">Acme Cards</a>
+               <a class="navbar-brand" href="{{ 'card' }}">Acme Cards</a>
                {% if is_granted('ROLE_USER') %}
-               <p>Welcome! </p>
-               <a class="logoutButton" href="{{ 'logout' }}">Logout!</a>
+                   <div class="nav-button-group">
+                       <a class="logoutButton btn btn-lg btn-outline-primary m-1" href="{{ 'card' }}">Order</a>
+                       <a class="logoutButton btn btn-lg btn-outline-primary" href="{{ 'logout' }}">Logout!</a>
+                   </div>
                {% endif %}
            </div>
        </nav>

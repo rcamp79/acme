@@ -3,6 +3,58 @@
 {% block title %}Acme Cards{% endblock %}
 
 {% block content %}
-    <h1>Your Orders</h1>
+
+   <div class="container-fluid main-order-content">
+       <h1>Order Page</h1>
+       <div class="container orders-list-container">
+           <h3>Your Current Orders:</h3>
+           {% if data %}
+           <table class="table table-light table-hover">
+               <thead>
+               <tr>
+                   <th scope="col">User Name</th>
+                   <th scope="col">Order Date</th>
+                   <th scope="col">Manufacturer</th>
+                   <th scope="col">Player Name</th>
+                   <th scope="col">Value</th>
+               </tr>
+               </thead>
+               <tbody>
+               {% for card in data %}
+               <tr>
+                   <td>{{ card.user }}</td>
+                   <td>{{ card.orderdate|date('d-m-Y')}}</td>
+                   <td>{{ card.manufacturer }}</td>
+                   <td>{{ card.player }}</td>
+                   <td>{{ card.value }}</td>
+               </tr>
+               {% endfor %}
+               </tbody>
+           </table>
+           {% else %}
+               <table class="table table-hover">
+                   <thead>
+                   <tr>
+                       <th scope="col">User Name</th>
+                       <th scope="col">Order Date</th>
+                       <th scope="col">Manufacturer</th>
+                       <th scope="col">Player Name</th>
+                       <th scope="col">Value</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                        <td>No Orders Yet</td>
+                        <td>No Orders Yet</td>
+                        <td>No Orders Yet</td>
+                        <td>No Orders Yet</td>
+                        <td>No Orders Yet</td>
+                       </tr>
+                   </tbody>
+               </table>
+           {% endif %}
+
+       </div>
+   </div>
 {% endblock %}
 
