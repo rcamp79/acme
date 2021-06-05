@@ -11,7 +11,6 @@
         </div>
     </div>
     {% else %}
-    <main class="container login-container">
         <div class="row">
             <div class="col-md-6 col-sm-12 content login">
                 <form method="post">
@@ -22,7 +21,7 @@
                     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                     <label for="inputEmail" class="form-label">Email</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-{#                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>#}
+                    {#                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>#}
                     <label for="inputPassword" class="form-label">Password</label>
                     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
@@ -30,8 +29,8 @@
                            value="{{ csrf_token('authenticate') }}">
 
 
-{#                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
-{#                    See https://symfony.com/doc/current/security/remember_me.html#}
+                    {#                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+                    {#                    See https://symfony.com/doc/current/security/remember_me.html#}
 
                     <div class="checkbox mb-3">
                         <label>
@@ -47,7 +46,6 @@
                 </form>
             </div>
         </div>
-    </main>
     {% endif %}
+</main>
 {% endblock %}
-
