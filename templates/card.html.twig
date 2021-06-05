@@ -1,8 +1,23 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <style>
+        @media only screen and (max-width: 1200px) {
+          .sidebar {
+              width: 25%;
+          }
+
+          .form-container{
+              width: 75%;
+          }
+
+        }
+    </style>
+{% endblock %}
 
 {% block title %}Acme Cards{% endblock %}
 
 {% block content %}
+
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">{{ message }}</div>
     {% endfor %}
