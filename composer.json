@@ -3,6 +3,7 @@
     "license": "proprietary",
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "platform-check": false,
     "require": {
         "php": ">=7.4",
         "ext-ctype": "*",
@@ -20,7 +21,6 @@
         "symfony/framework-bundle": "5.3.*",
         "symfony/maker-bundle": "^1.31",
         "symfony/proxy-manager-bridge": "5.3.*",
-        "symfony/requirements-checker": "^2.0",
         "symfony/runtime": "5.3.*",
         "symfony/security-bundle": "5.3.*",
         "symfony/stopwatch": "^5.3",
@@ -57,8 +57,7 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "requirements-checker": "script"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
