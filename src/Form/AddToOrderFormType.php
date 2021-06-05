@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Card;
-use Doctrine\DBAL\Types\DecimalType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -33,7 +32,7 @@ class AddToOrderFormType extends AbstractType
             ->add('variation', TextType::class, [
                 'attr' => ['value' => '', 'placeholder' => 'Variation']
             ])
-            ->add('value',DecimalType::class, [
+            ->add('value', IntegerType::class, [
                 'attr' => ['value' => '', 'placeholder' => 'Value in $']
             ])
 
