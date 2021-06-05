@@ -3,11 +3,14 @@
 namespace App\Form;
 
 use App\Entity\Card;
+use Doctrine\DBAL\Types\DecimalType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CurrencyType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Currency;
 
 class AddToOrderFormType extends AbstractType
 {
@@ -32,8 +35,8 @@ class AddToOrderFormType extends AbstractType
             ->add('variation', TextType::class, [
                 'attr' => ['value' => '', 'placeholder' => 'Variation']
             ])
-            ->add('value', IntegerType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Value in $']
+            ->add('value', TextType::class, [
+                'attr' => ['value' => '', 'placeholder' => 'Card Value i.e. 1.00']
             ])
 
 
