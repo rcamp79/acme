@@ -3,19 +3,16 @@
 {% block content %}
 
     <main class="container register-container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 content register">
+        <div class="row" style="height: 500px">
+            <div class="col-md-6 col-sm-12 content register" style="display: flex; justify-content: center; align-items: center;">
                 <div class="form-container">
                     {{ form_start(registrationForm, {
                         attr: { class: 'form-signin'}
                     })}}
                     <h1 class="h3 font-weight-normal">Please register!</h1>
-                    <p>Please enter your email.</p>
-                    {{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'Email'}}) }}
-                    <p>Please enter your password.</p>
-                    {{ form_widget(registrationForm.plainPassword, { 'attr': {'placeholder': 'Password'}}) }}
+                    {{ form_widget(registrationForm) }}
                     <div class="button-group">
-                        <button class="btn btn-lg btn-primary" type="submit">
+                        <button class="btn btn-lg btn-primary" type="submit" formnovalidate>
                             Register
                         </button>
                         <a href="{{ "/" }}" class="btn btn-lg btn-secondary">Go Back</a>

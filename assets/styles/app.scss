@@ -62,11 +62,12 @@ body {
 
 // Register
 .register-container{
-  height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+
 }
 
 .register {
@@ -191,9 +192,7 @@ body {
       margin: 5px;
     }
 
-    label{
-      display: none;
-    }
+
 
     input {
       margin: 5px;
