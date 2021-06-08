@@ -2,6 +2,7 @@
 
 body {
   height: 100vh;
+
 }
 
 //Home
@@ -66,6 +67,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 75%;
 
 
 }
@@ -180,6 +182,8 @@ body {
 
   }
 
+
+
   .form-container{
     border: 1px solid #fff;
     width: 800px;
@@ -187,6 +191,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+
 
     .btn {
       margin: 5px;
@@ -198,6 +204,49 @@ body {
       margin: 5px;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
+    }
+
+  }
+}
+
+.register{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+  padding:0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.form-signin{
+  input{
+    margin: 20px;
+    background-color: #fff;
+  }
+}
+
+
+
+#user_registration_form{
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px;
+
+    label{
+      align-self: start;
+    }
+
+    input {
+      margin:0;
+      padding: 0;
+    }
+
+    li{
+      color: red;
     }
 
   }
