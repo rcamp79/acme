@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order Entry{% endblock %}
+
+{% block content %}
+
+   {{ form_start(form) }}
+       <div class="well" id="card_list" data-prototype="{{ form_widget(form.cards.vars.prototype)|e('html_attr') }}">
+           {{ form_widget(form) }}
+{#           {% for card in form.cards %}#}
+{#                {{ form_row(card) }}#}
+{#           {% endfor %}#}
+       </div>
+    {{ form_end(form) }}
+
+
+<button class="btn btn-primary myButton">Add Another Card</button>
+{% endblock %}
+
+
+
+

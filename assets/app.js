@@ -10,3 +10,20 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+
+var $collectionHolder;
+
+$('.myButton').click(console.log("ok"));
+
+// var myButton = document.querySelector('.add');
+// myButton.addEventListener("click", function(){
+//
+// });
+
+
+
+//Add new forms
+
+//Remove forms
+

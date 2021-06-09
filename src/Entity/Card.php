@@ -62,6 +62,12 @@ class Card
      */
     private $orderdate;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="cards")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $_order;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +177,18 @@ class Card
     public function setOrderdate(\DateTimeInterface $orderdate): self
     {
         $this->orderdate = $orderdate;
+
+        return $this;
+    }
+
+    public function getOrder(): ?Order
+    {
+        return $this->_order;
+    }
+
+    public function setOrder(?Order $_order): self
+    {
+        $this->_order = $_order;
 
         return $this;
     }
