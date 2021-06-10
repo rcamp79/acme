@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Order;
 use App\Repository\CardRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -53,20 +54,20 @@ class Card
     private $value;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $user;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $orderdate;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="cards")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="cards", cascade={"persist"})
      */
-    private $_order;
+    private $cards_order;
+
 
     public function getId(): ?int
     {
@@ -176,20 +177,23 @@ class Card
 
     public function setOrderdate(\DateTimeInterface $orderdate): self
     {
-        $this->orderdate = $orderdate;
+        $this->orderdate = new \DateTime();
 
         return $this;
     }
 
-    public function getOrder(): ?Order
+    public function getCardsOrder(): ?Order
     {
-        return $this->_order;
+        return $this->cards_order;
     }
 
-    public function setOrder(?Order $_order): self
+    public function setCardsOrder(?Order $cards_order): self
     {
-        $this->_order = $_order;
+        $this->cards_order = $cards_order;
 
         return $this;
     }
+
+
+
 }

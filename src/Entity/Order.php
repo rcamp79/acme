@@ -41,7 +41,7 @@ class Order
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=Card::class, mappedBy="_order", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Card::class, mappedBy="cards_order", cascade={"persist"})
      */
     private $cards;
 
@@ -49,6 +49,7 @@ class Order
     {
         $this->cards = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -115,7 +116,7 @@ class Order
     {
         if (!$this->cards->contains($card)) {
             $this->cards[] = $card;
-            $card->setOrder($this);
+            $card->setCardsOrder($this);
         }
 
         return $this;
@@ -125,11 +126,14 @@ class Order
     {
         if ($this->cards->removeElement($card)) {
             // set the owning side to null (unless already changed)
-            if ($card->getOrder() === $this) {
-                $card->setOrder(null);
+            if ($card->getCardsOrder() === $this) {
+                $card->setCardsOrder(null);
             }
         }
 
         return $this;
     }
+
+
+
 }

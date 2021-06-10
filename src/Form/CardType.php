@@ -18,26 +18,27 @@ class CardType extends AbstractType
     {
         $builder
             ->add('manufacturer', TextType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Manufacturer']
+                'attr' => [ 'placeholder' => 'Manufacturer']
             ])
             ->add('year', IntegerType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Card Year']
+                'attr' => [ 'placeholder' => 'Card Year']
             ])
             ->add('setname', TextType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Name of the Set']
+                'attr' => [ 'placeholder' => 'Name of the Set']
             ])
             ->add('player', TextType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Player']
+                'attr' => [ 'placeholder' => 'Player']
             ])
             ->add('cardnum', IntegerType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Card Number']
+                'attr' => [ 'placeholder' => 'Card Number']
             ])
             ->add('variation', TextType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Variation']
+                'attr' => [ 'placeholder' => 'Variation']
             ])
             ->add('value', TextType::class, [
-                'attr' => ['value' => '', 'placeholder' => 'Card Value i.e. 1.00']
+                'attr' => [ 'placeholder' => 'Card Value i.e. 1.00']
             ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

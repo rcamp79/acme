@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\Currency;
 
 class AddToOrderFormType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
