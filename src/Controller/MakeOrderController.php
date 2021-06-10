@@ -22,34 +22,30 @@ class MakeOrderController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $user = $this->getUser()->getUserIdentifier();
 
-        $order = new Order();
-        $card = new Card();
-        $order->getCards()->add($card);
+//        $order = new Order();
+//        $card = new Card();
+//        $order->getCards()->add($card);
 
-        $form = $this->createForm(OrderType::class, $order);
+        $form = $this->createForm(OrderType::class);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted()){
+            $order = new Order();
 
             $order->setNumCards($order->getCards()->count());
             $order->setDate(new \DateTime());
             $order->setUser($user);
-            dd($order);
-//            $em->persist($order);
-//            $em->flush();
 
-
-//            $em->persist($order);
-//            $em->flush();
-//            unset($order);
-//            $order = new Order();
-//            unset($form);
-//            $form = $this->createForm(OrderType::class, $order);
-//            $card = new Card();
-//            $order->getCards()->add($card);
-
-
+            $em->persist($order);
+            $em->flush();
+            unset($order);
+            $order = new Order();
+            unset($form);
+            $form = $this->createForm(OrderType::class, $order);
+            $card = new Card();
+            $order->getCards()->add($card);
+            
         }
 
         return $this->render('enter.html.twig', [

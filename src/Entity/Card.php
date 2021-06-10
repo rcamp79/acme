@@ -72,9 +72,10 @@ class Card
     private $orderdate;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="cards", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="cards")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $cards_order;
+    private $ordr;
 
 
     public function getId(): ?int
@@ -190,18 +191,18 @@ class Card
         return $this;
     }
 
-    public function getCardsOrder(): ?Order
+    public function getOrdr(): ?Order
     {
-        return $this->cards_order;
+        return $this->ordr;
     }
 
-    public function setCardsOrder(?Order $cards_order): self
+    public function setOrdr(?Order $ordr): self
     {
-        $this->cards_order = $cards_order;
+        $this->ordr = $ordr;
 
         return $this;
     }
 
-
+   
 
 }
