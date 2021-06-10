@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Entity\Order;
 use App\Repository\CardRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CardRepository::class)
@@ -19,36 +20,43 @@ class Card
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $manufacturer;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="integer", nullable=true)
      */
     private $year;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $setname;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $player;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="integer", nullable=true)
      */
     private $cardnum;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $variation;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $value;

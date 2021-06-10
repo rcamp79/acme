@@ -6,11 +6,15 @@ namespace App\Form;
 
 use App\Entity\Card;
 use App\Entity\Order;
+use Decimal\Decimal;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Currency;
+
 
 class CardType extends AbstractType
 {
@@ -35,8 +39,8 @@ class CardType extends AbstractType
             ->add('variation', TextType::class, [
                 'attr' => [ 'placeholder' => 'Variation']
             ])
-            ->add('value', TextType::class, [
-                'attr' => [ 'placeholder' => 'Card Value i.e. 1.00']
+            ->add('value', IntegerType::class, [
+                'attr' => [ 'placeholder' => 'Card Value i.e. $1.00']
             ]);
 
     }
